@@ -1,6 +1,8 @@
 import React from "react";
+import YouTube from "react-youtube";
 
 const Home = () => {
+  const videoId = "p3sotuSCoAc";
   return (
     <div>
       <h1>Message to jojo</h1>
@@ -18,6 +20,9 @@ const Home = () => {
       ></iframe>
       <p>
         <a href="https://giphy.com/gifs/cute-cats-kawaii-KztT2c4u8mYYUiMKdJ"></a>
+      </p>
+      <p>
+        <YouTube videoId={"p3sotuSCoAc"} />
       </p>
     </div>
   );
