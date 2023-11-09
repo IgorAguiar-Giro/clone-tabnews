@@ -15,3 +15,6 @@ git diff - calcula a diferença entre as versões/alterações dos arquivos.
 
 npm run lint:check
 npm run lint:fix
+
+# Docker
+docker compose -f infra/compose.yaml up -d
