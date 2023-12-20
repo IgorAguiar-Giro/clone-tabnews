@@ -3,16 +3,13 @@ test("GET to /api/v1/status should return 200", async () => {
   expect(response.status).toBe(200);
 
   const responseBody = await response.json();
-  expect(responseBody.updated_at).toBeDefined();
 
   const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
   expect(responseBody.updated_at).toEqual(parsedUpdatedAt); //check if date is ISO8601
 
-  expect(Number(responseBody.server_version)).toBe(16); //hardcoded test version for Postgres Version
+  expect(responseBody.dependencies.database.version).toEqual("16.0"); //hardcoded test version for Postgres Version
 
-  expect(Number(responseBody.max_connections)).toBe(100); //hardcoded test for max connections
+  expect(responseBody.dependencies.database.max_connections).toEqual(100); //hardcoded test for max connections
 
-  expect(Number(responseBody.used_connections)).toBeLessThanOrEqual(
-    Number(responseBody.max_connections)
-  ); //Test for used connections
+  expect(responseBody.dependencies.database.opened_connections).toEqual(1); //Test for Opened Connections
 });
