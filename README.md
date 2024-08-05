@@ -10,6 +10,7 @@ git add - sobe alterações para a staging area.
 git commit - realiza novos commits.
 git commit --amend - substitui o commit anterior por um novo, mas aproveita as alterações dele.
 git diff - calcula a diferença entre as versões/alterações dos arquivos.
+git push --set-upstream origin fix-migrations-endpoint
 
 # Lista de comandos do Prettier
 
